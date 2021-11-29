@@ -152,7 +152,7 @@ import {
 import { LabelLayout, UniversalTransition } from "echarts/features";
 import { CanvasRenderer } from "echarts/renderers";
 // import hubeiJson from "../assets/js/hubei";
-import leshanJson from "../assets/js/leshan";
+import ganluoJson from "../assets/js/ganluo";
 // 注册必须的组件
 echarts.use([
   TitleComponent,
@@ -462,8 +462,8 @@ export default defineComponent({
     const map = () => {
       // 基于准备好的dom，初始化echarts实例
       var myChart = echarts.init(mapDiv.value);
-      var mapName = "leshan";
-      echarts.registerMap(mapName, leshanJson);
+      var mapName = "ganluo";
+      echarts.registerMap(mapName, ganluoJson);
       const option = {
         tooltip: {
           formatter: function (params) {
