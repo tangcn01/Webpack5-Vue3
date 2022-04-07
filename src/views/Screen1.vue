@@ -473,7 +473,7 @@ export default defineComponent({
         },
         visualMap: {
           min: 500,
-          max: 3000,
+          max: 800,
           text: ["High", "Low"],
           realtime: false,
           calculable: true,
@@ -483,25 +483,13 @@ export default defineComponent({
         },
         series: [
           {
-            name: "乐山",
+            name: "凉山",
             type: "map",
             map: mapName,
             label: {
               show: true,
             },
-            data: [
-              { name: "沐川县", value: 800 },
-              { name: "峨眉山市", value: 800 },
-              { name: "马边彝族自治县", value: 800 },
-              { name: "峨边彝族自治县", value: 800 },
-              { name: "夹江县", value: 800 },
-              { name: "井研县", value: 800 },
-              { name: "犍为县", value: 800 },
-              { name: "金口河区", value: 800 },
-              { name: "五通桥区", value: 800 },
-              { name: "沙湾区", value: 800 },
-              { name: "市中区", value: 1200 },
-            ],
+            data: [{ name: "甘洛县", value: 500 }],
           },
         ],
       };

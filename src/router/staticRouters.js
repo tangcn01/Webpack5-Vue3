@@ -17,6 +17,7 @@ export const constantRouterMap = [
       isShow: true,
     },
   },
+
   {
     path: "/admin",
     name: "adminLayout",
@@ -33,6 +34,15 @@ export const constantRouterMap = [
     component: () => import("../layouts/Base.vue"),
     meta: {
       title: "首页",
+    },
+    children: [],
+  },
+  {
+    path: "/map",
+    name: "map",
+    component: () => import("../views/map/Index.vue"),
+    meta: {
+      title: "地图",
     },
     children: [],
   },

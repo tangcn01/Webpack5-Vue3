@@ -11,7 +11,7 @@ module.exports = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/",
+    publicPath: "/assets/",
   },
   devtool: "cheap-module-source-map",
   plugins: [
@@ -93,11 +93,22 @@ module.exports = {
         },
       },
       {
+        test: /modules\//,
+        loader: "url-loader",
+        options: {
+          limit: 10,
+          generator: (content, mimetype, encoding, resourcePath) => {
+            return "";
+          },
+        },
+      },
+      {
         test: /\.vue$/,
         use: ["vue-loader"],
       },
     ],
   },
+
   resolve: {
     extensions: [".js", ".json", ".vue"],
     alias: {
@@ -112,5 +123,8 @@ module.exports = {
     open: true,
     contentBase: path.resolve(__dirname, "dist"),
     historyApiFallback: true,
+    static: {
+      directory: path.join(__dirname, "assets"),
+    },
   },
 };
